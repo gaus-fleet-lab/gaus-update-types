@@ -1,2 +1,2 @@
 # gaus-update-types
-This JSON library describe different updates types 
+This Javascript library describe different updates types 
