@@ -1,0 +1,11 @@
+{
+  "name": "@gaus/update-types",
+  "version": "0.0.1",
+  "main": "src/index.js",
+  "description": "A library to descript and handle GAUS update type",
+  "dependencies": {
+  },
+  "scripts": {
+  }
+}
+
