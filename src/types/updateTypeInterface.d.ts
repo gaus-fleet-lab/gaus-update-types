@@ -26,7 +26,7 @@ export interface UpdateTypeInterface {
    * @param  str - the string to validate
    * @return null if the string was ok, else a error message
    */
-  validate(str: string): string;
+  validate(str: string, errorMessage?: string): string;
 
   eq(str1: string, str2: string): boolean;
 

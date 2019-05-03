@@ -13,7 +13,7 @@ import { UpdateTypeInterface } from '../types/updateTypeInterface';
 
 export const typeNumber: UpdateTypeInterface = {
   validate: function(test: string, errorMessage?: string): string {
-    if (Number(test) === NaN) {
+    if (Number.isNaN(Number(test))) {
       return errorMessage || `${test} is not a number`;
     }
     return null;
