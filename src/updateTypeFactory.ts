@@ -11,7 +11,7 @@
 
 //import { UpdateTypeInterfaceD } from './updateTypeInterface';
 import { TypeNumber } from './number/number';
-import { UpdateTypeInterface } from './updateTypeInterface';
+import { UpdateTypeInterface } from './types/updateTypeInterface';
 
 type UpdateType = 'string' | 'number' | 'alphanum' | 'semver';
 

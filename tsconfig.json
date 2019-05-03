@@ -4,14 +4,22 @@
     "importHelpers": true,
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
-    "declaration": false,
+    "declaration": true,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es5",
-    "typeRoots": ["node_modules/@types", "app/src/types"],
+    "typeRoots": ["node_modules/@types", "src/types"],
     "types": ["jest", "node"],
     "lib": ["es2017", "dom"],
-    "noImplicitAny": true
-  }
+    "noImplicitAny": true,
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude" : [
+    "node_modules",
+    "**/*.spec.ts",
+    "src/setupJest.ts"
+  ]
 }
