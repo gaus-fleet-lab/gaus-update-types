@@ -1,1 +1,1 @@
-export { UpdateTypeFactory as default} from './updateTypeFactory';
+export { updateType, getSupportedUpdateTypes } from './updateType';

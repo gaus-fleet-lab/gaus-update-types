@@ -12,7 +12,7 @@
 import { UpdateTypeInterface } from '../types/updateTypeInterface';
 
 export const typeNumber: UpdateTypeInterface = {
-  validate: function (test: string, errorMessage?: string): string {
+  validate: function(test: string, errorMessage?: string): string {
     if (Number(test) === NaN) {
       return errorMessage || `${test} is not a number`;
     }
@@ -35,5 +35,5 @@ export const typeNumber: UpdateTypeInterface = {
   },
   sort: function(list: number[]): number[] {
     return list.sort();
-  }
-}
+  },
+};
