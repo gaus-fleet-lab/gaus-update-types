@@ -1,0 +1,17 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "importHelpers": true,
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es5",
+    "typeRoots": ["node_modules/@types", "app/src/types"],
+    "types": ["jest", "node"],
+    "lib": ["es2017", "dom"],
+    "noImplicitAny": true
+  }
+}
