@@ -1,9 +1,9 @@
 import { typeNumber } from './number';
 
-describe('number', () => {
-  let sut = typeNumber;
-  it('can compare equal', () => {
-    let result = sut.eq('1', '1');
+describe('number', (): void => {
+  const sut = typeNumber;
+  it('can compare equal', (): void => {
+    const result = sut.eq('1', '1');
     expect(result).toBe(true);
   });
 });
