@@ -38,5 +38,5 @@ export interface UpdateTypeInterface {
 
   lte(str1: string, str2: string): boolean;
 
-  sort(list: Array<any>): Array<any>;
+  sort(list: any[]): any[];
 }

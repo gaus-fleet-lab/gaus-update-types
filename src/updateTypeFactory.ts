@@ -13,10 +13,10 @@
 import { TypeNumber } from './typeNumber';
 import { UpdateTypeInterface } from './updateTypeInterface';
 
-type UpdateType = 'string' | 'number' | 'aplpanum' | 'semver';
+type UpdateType = 'string' | 'number' | 'alphanum' | 'semver';
 
 export class UpdateTypeFactory {
-  private _updateTypes = ['string', 'number', 'alphanum', 'semver'];
+  private _updateTypes: UpdateType[] = ['string', 'number', 'alphanum', 'semver'];
 
   /**
    * @description
@@ -30,7 +30,7 @@ export class UpdateTypeFactory {
    *
    * @return  array of valid types
    */
-  public getSupportedUpdateTypes() {
+  public getSupportedUpdateTypes(): UpdateType[] {
     return this._updateTypes;
   }
 
@@ -48,7 +48,7 @@ export class UpdateTypeFactory {
    */
   public type(type: UpdateType): UpdateTypeInterface {
     switch (type) {
-      case 'semvers':
+      case 'semver':
         return null;
       case 'string':
         return null;

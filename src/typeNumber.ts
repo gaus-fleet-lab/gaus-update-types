@@ -13,7 +13,7 @@ import { UpdateTypeInterface } from './updateTypeInterface';
 
 export class TypeNumber implements UpdateTypeInterface {
   public validate(str: string): string {
-    if (Number(str) == NaN) {
+    if (Number(str) === NaN) {
       return '${str} is not a number';
     }
     return null;
@@ -33,7 +33,7 @@ export class TypeNumber implements UpdateTypeInterface {
   public lte(str1: string, str2: string): boolean {
     return Number(str1) <= Number(str2);
   }
-  public sort(list: Array<number>): Array<number> {
+  public sort(list: number[]): number[] {
     return list.sort();
   }
 }
