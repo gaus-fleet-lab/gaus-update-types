@@ -11,29 +11,29 @@
 
 import { UpdateTypeInterface } from '../types/updateTypeInterface';
 
-export class TypeNumber implements UpdateTypeInterface {
-  public validate(str: string): string {
-    if (Number(str) === NaN) {
-      return '${str} is not a number';
+export const typeNumber: UpdateTypeInterface = {
+  validate: function (test: string, errorMessage?: string): string {
+    if (Number(test) === NaN) {
+      return errorMessage || `${test} is not a number`;
     }
     return null;
-  }
-  public eq(str1: string, str2: string): boolean {
+  },
+  eq: function(str1: string, str2: string): boolean {
     return Number(str1) === Number(str2);
-  }
-  public gt(str1: string, str2: string): boolean {
+  },
+  gt: function(str1: string, str2: string): boolean {
     return Number(str1) > Number(str2);
-  }
-  public gte(str1: string, str2: string): boolean {
+  },
+  gte: function(str1: string, str2: string): boolean {
     return Number(str1) >= Number(str2);
-  }
-  public lt(str1: string, str2: string): boolean {
+  },
+  lt: function(str1: string, str2: string): boolean {
     return Number(str1) < Number(str2);
-  }
-  public lte(str1: string, str2: string): boolean {
+  },
+  lte: function(str1: string, str2: string): boolean {
     return Number(str1) <= Number(str2);
-  }
-  public sort(list: number[]): number[] {
+  },
+  sort: function(list: number[]): number[] {
     return list.sort();
   }
 }

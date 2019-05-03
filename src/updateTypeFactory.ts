@@ -9,14 +9,38 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-//import { UpdateTypeInterfaceD } from './updateTypeInterface';
-import { TypeNumber } from './number/number';
+import {  typeNumber } from './number/number';
 import { UpdateTypeInterface } from './types/updateTypeInterface';
 
 type UpdateType = 'string' | 'number' | 'alphanum' | 'semver';
+const UPDATE_TYPES: UpdateType[] = ['string', 'number', 'alphanum', 'semver'];
 
-export class UpdateTypeFactory {
-  private _updateTypes: UpdateType[] = ['string', 'number', 'alphanum', 'semver'];
+/**
+ * @description
+ * Return the object for the type
+ *
+ * @usageNotes
+ *
+ * ```ts
+ * updateType('semver').validate('1.1.1')
+ * ```
+ *
+ * @param  type - must be one of the supported types
+ */
+export function updateType(type: UpdateType): UpdateTypeInterface {
+    switch (type) {
+      case 'semver':
+        return null;
+      case 'string':
+        return null;
+      case 'number':
+        return typeNumber;
+      case 'alphanum':
+        return null;
+      default:
+        return null;
+    }
+}
 
   /**
    * @description
@@ -25,40 +49,11 @@ export class UpdateTypeFactory {
    * @usageNotes
    *
    * ```ts
-   * UpdateTypeFactory.getSupportedUpdateTypes()
+   * getSupportedUpdateTypes()
    * ```
    *
    * @return  array of valid types
    */
-  public getSupportedUpdateTypes(): UpdateType[] {
-    return this._updateTypes;
-  }
-
-  /**
-   * @description
-   * Return the object for the type
-   *
-   * @usageNotes
-   *
-   * ```ts
-   * UpdateTypeFactory.type('semvers').validate('1.1.1')
-   * ```
-   *
-   * @param  type - must be one of the supported
-   */
-  public type(type: UpdateType): UpdateTypeInterface {
-    switch (type) {
-      case 'semver':
-        return null;
-      case 'string':
-        return null;
-      case 'number':
-        return new TypeNumber();
-      case 'alphanum':
-        return null;
-      default:
-        return null;
-    }
-    return null;
-  }
+export function getSupportedUpdateTypes(): UpdateType[] {
+  return UPDATE_TYPES;
 }
