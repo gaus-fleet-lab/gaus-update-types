@@ -12,14 +12,8 @@
     "typeRoots": ["node_modules/@types", "src/types"],
     "types": ["jest", "node"],
     "lib": ["es2017", "dom"],
-    "noImplicitAny": true,
+    "noImplicitAny": true
   },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude" : [
-    "node_modules",
-    "**/*.spec.ts",
-    "src/setupJest.ts"
-  ]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts", "src/setupJest.ts"]
 }
