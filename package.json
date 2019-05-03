@@ -1,11 +1,11 @@
 {
   "name": "@gaus/update-types",
   "version": "0.0.1",
-  "main": "src/index.js",
   "description": "A library to descript and handle GAUS update type",
   "dependencies": {
     "typescript": "3.4.5"
   },
+  "main": "dist/index.js",
   "devDependencies": {
     "@types/jest": "24.0.12",
     "@types/node": "11.13.9",
@@ -20,11 +20,13 @@
     "ts-jest": "24.0.2"
   },
   "scripts": {
+    "clean": "rm -rf ./dist",
     "build": "tsc",
     "lint": "eslint src/**",
     "format:check": "prettier --config ./.prettierrc --list-different \"./**/*{.ts,.js,.json,.css,.scss}\"",
     "format:fix": "prettier --config ./.prettierrc --write \"./**/*{.ts,.js,.json,.css,.scss}\"",
     "test": "jest",
-    "test:ci": "jest --ci"
+    "test:ci": "jest --ci",
+    "prepare": "echo 'Building @gaus/update-types' && npm run build"
   }
 }
