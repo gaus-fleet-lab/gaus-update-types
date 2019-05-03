@@ -10,7 +10,7 @@
  */
 
 //import { UpdateTypeInterfaceD } from './updateTypeInterface';
-import { TypeNumber } from './typeNumber';
+import { TypeNumber } from './number/number';
 import { UpdateTypeInterface } from './updateTypeInterface';
 
 type UpdateType = 'string' | 'number' | 'alphanum' | 'semver';

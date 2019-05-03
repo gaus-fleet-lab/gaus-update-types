@@ -5,18 +5,24 @@
   "description": "A library to descript and handle GAUS update type",
   "dependencies": {},
   "devDependencies": {
+    "@types/jest": "24.0.12",
+    "@types/node": "11.13.9",
     "@typescript-eslint/eslint-plugin": "1.7.0",
     "@typescript-eslint/parser": "1.7.0",
     "eslint": "5.16.0",
     "eslint-config-prettier": "4.2.0",
     "eslint-plugin-import": "2.17.2",
     "eslint-plugin-jest": "22.5.1",
+    "jest": "24.7.1",
     "prettier": "1.14.3",
+    "ts-jest": "24.0.2",
     "typescript": "3.4.5"
   },
   "scripts": {
     "lint": "eslint src/**",
     "format:check": "prettier --config ./.prettierrc --list-different \"./**/*{.ts,.js,.json,.css,.scss}\"",
-    "format:fix": "prettier --config ./.prettierrc --write \"./**/*{.ts,.js,.json,.css,.scss}\""
+    "format:fix": "prettier --config ./.prettierrc --write \"./**/*{.ts,.js,.json,.css,.scss}\"",
+    "test": "jest",
+    "test:ci": "jest --ci"
   }
 }
