@@ -28,7 +28,7 @@ export interface UpdateTypeInterface {
    */
   validate(str: string): string;
 
-  eq(str1: string, str2:string): boolean;
+  eq(str1: string, str2: string): boolean;
 
   gt(str1: string, str2: string): boolean;
 
@@ -39,5 +39,4 @@ export interface UpdateTypeInterface {
   lte(str1: string, str2: string): boolean;
 
   sort(list: Array<any>): Array<any>;
-
 }

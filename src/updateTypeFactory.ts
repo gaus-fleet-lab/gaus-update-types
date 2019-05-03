@@ -10,15 +10,13 @@
  */
 
 //import { UpdateTypeInterfaceD } from './updateTypeInterface';
-import { TypeNumber} from "./typeNumber";
-import {UpdateTypeInterface} from "./updateTypeInterface";
+import { TypeNumber } from './typeNumber';
+import { UpdateTypeInterface } from './updateTypeInterface';
 
-type UpdateType  = 'string' | 'number' | 'aplpanum' | 'semver';
+type UpdateType = 'string' | 'number' | 'aplpanum' | 'semver';
 
 export class UpdateTypeFactory {
-
   private _updateTypes = ['string', 'number', 'alphanum', 'semver'];
-
 
   /**
    * @description
@@ -49,8 +47,7 @@ export class UpdateTypeFactory {
    * @param  type - must be one of the supported
    */
   public type(type: UpdateType): UpdateTypeInterface {
-
-    switch(type) {
+    switch (type) {
       case 'semvers':
         return null;
       case 'string':

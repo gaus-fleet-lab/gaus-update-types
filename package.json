@@ -3,8 +3,7 @@
   "version": "0.0.1",
   "main": "src/index.js",
   "description": "A library to descript and handle GAUS update type",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "prettier": "1.14.3"
   },
@@ -13,4 +12,3 @@
     "format:fix": "prettier --config ./.prettierrc --write \"./**/*{.ts,.js,.json,.css,.scss}\""
   }
 }
-
