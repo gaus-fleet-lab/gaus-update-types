@@ -22,7 +22,7 @@
   "scripts": {
     "clean": "rm -rf ./dist",
     "build": "tsc",
-    "lint": "eslint src/**/*.ts",
+    "lint": "eslint ./src/ --ext=ts --ext=spec.ts",
     "format:check": "prettier --config ./.prettierrc --list-different \"./**/*{.ts,.js,.json,.css,.scss}\"",
     "format:fix": "prettier --config ./.prettierrc --write \"./**/*{.ts,.js,.json,.css,.scss}\"",
     "test": "jest",
