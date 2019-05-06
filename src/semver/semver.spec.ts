@@ -21,7 +21,7 @@ describe('semver', (): void => {
 
   it('validates valid semver', (): void => {
     const result = sut.validate('1.1.1');
-    expect(result).not.toBe(null);
+    expect(result).toBe(null);
   });
 
   it('does not validate float', (): void => {
