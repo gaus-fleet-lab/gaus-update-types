@@ -11,8 +11,14 @@
 
 import { TypeNumber } from './number/number';
 import { UpdateTypeInterface } from './types/updateTypeInterface';
+import { TypeAlphanum } from './alphanum/alphanum';
+import { TypeString } from './string/string';
+import { TypeSemver } from './semver/semver';
 
+const typeAlphanum = new TypeAlphanum();
 const typeNumber = new TypeNumber();
+const typeSemver = new TypeSemver();
+const typeString = new TypeString();
 
 type UpdateType = 'string' | 'number' | 'alphanum' | 'semver';
 const UPDATE_TYPES: UpdateType[] = ['string', 'number', 'alphanum', 'semver'];
@@ -20,7 +26,10 @@ const UPDATE_TYPES: UpdateType[] = ['string', 'number', 'alphanum', 'semver'];
 const UPDATE_LUT: {
   [key: string]: UpdateTypeInterface;
 } = {
+  alphanum: typeAlphanum,
   number: typeNumber,
+  semver: typeSemver,
+  string: typeString,
 };
 /**
  * @description
