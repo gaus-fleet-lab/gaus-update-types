@@ -1,7 +1,7 @@
 {
   "name": "@gaus/update-types",
   "version": "0.0.1",
-  "description": "A library to descript and handle GAUS update type",
+  "description": "A library to describe and handle GAUS update type",
   "dependencies": {
     "typescript": "3.4.5"
   },
