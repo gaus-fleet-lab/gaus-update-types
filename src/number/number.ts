@@ -10,30 +10,17 @@
  */
 
 import { UpdateTypeInterface } from '../types/updateTypeInterface';
+import { TypeBase } from '../base';
 
-export const typeNumber: UpdateTypeInterface = {
-  validate: function(test: string, errorMessage?: string): string {
-    if (Number.isNaN(Number(test))) {
+export class TypeNumber extends TypeBase implements UpdateTypeInterface {
+  validate(test: string, errorMessage?: string): string {
+    const parsed = parseInt(test, 10);
+    if (Number.isNaN(parsed) || parsed.toString() !== test) {
       return errorMessage || `${test} is not a number`;
     }
     return null;
-  },
-  eq: function(str1: string, str2: string): boolean {
-    return Number(str1) === Number(str2);
-  },
-  gt: function(str1: string, str2: string): boolean {
-    return Number(str1) > Number(str2);
-  },
-  gte: function(str1: string, str2: string): boolean {
-    return Number(str1) >= Number(str2);
-  },
-  lt: function(str1: string, str2: string): boolean {
-    return Number(str1) < Number(str2);
-  },
-  lte: function(str1: string, str2: string): boolean {
-    return Number(str1) <= Number(str2);
-  },
-  sort: function(list: number[]): number[] {
-    return list.sort();
-  },
-};
+  }
+  compare(a: string, b: string): number {
+    return Number(a) - Number(b);
+  }
+}

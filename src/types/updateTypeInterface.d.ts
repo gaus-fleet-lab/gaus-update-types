@@ -38,5 +38,5 @@ export interface UpdateTypeInterface {
 
   lte(str1: string, str2: string): boolean;
 
-  sort(list: any[]): any[];
+  compare(a: string, b: string): number;
 }

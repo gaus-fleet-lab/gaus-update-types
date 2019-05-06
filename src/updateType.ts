@@ -9,12 +9,19 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import { typeNumber } from './number/number';
+import { TypeNumber } from './number/number';
 import { UpdateTypeInterface } from './types/updateTypeInterface';
+
+const typeNumber = new TypeNumber();
 
 type UpdateType = 'string' | 'number' | 'alphanum' | 'semver';
 const UPDATE_TYPES: UpdateType[] = ['string', 'number', 'alphanum', 'semver'];
 
+const UPDATE_LUT: {
+  [key: string]: UpdateTypeInterface;
+} = {
+  number: typeNumber,
+};
 /**
  * @description
  * Return the object for the type
@@ -27,19 +34,9 @@ const UPDATE_TYPES: UpdateType[] = ['string', 'number', 'alphanum', 'semver'];
  *
  * @param  type - must be one of the supported types
  */
+
 export function updateType(type: UpdateType): UpdateTypeInterface {
-  switch (type) {
-    case 'semver':
-      return null;
-    case 'string':
-      return null;
-    case 'number':
-      return typeNumber;
-    case 'alphanum':
-      return null;
-    default:
-      return null;
-  }
+  return UPDATE_LUT[type];
 }
 
 /**
