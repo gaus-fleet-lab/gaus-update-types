@@ -17,7 +17,7 @@ export class TypeSemver extends TypeBase implements UpdateTypeInterface {
   validate(test: string, errorMessage?: string): string {
     const validated = valid(test);
     if (!validated) {
-      return errorMessage || `${test} is not an alphanum`;
+      return errorMessage || `${test} is not an semver`;
     }
     return null;
   }
