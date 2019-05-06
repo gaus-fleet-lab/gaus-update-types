@@ -21,10 +21,6 @@ export abstract class TypeBase implements UpdateTypeInterface {
     return this.compare(str1, str2) <= 0;
   }
 
-  sort(list: string[]): string[] {
-    return list.sort((a, b): number => this.compare(a, b));
-  }
-
   abstract validate(test: string): string;
 
   abstract compare(a: string, b: string): number;

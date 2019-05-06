@@ -75,15 +75,4 @@ describe('number', (): void => {
     expect(list[4]).toBe('4');
     expect(list[5]).toBe('5');
   });
-
-  it('can use sort function to sort list', (): void => {
-    const list = ['0', '2', '3', '1', '5', '4'];
-    sut.sort(list);
-    expect(list[0]).toBe('0');
-    expect(list[1]).toBe('1');
-    expect(list[2]).toBe('2');
-    expect(list[3]).toBe('3');
-    expect(list[4]).toBe('4');
-    expect(list[5]).toBe('5');
-  });
 });
