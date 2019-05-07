@@ -10,8 +10,8 @@
  */
 
 import { valid, compare } from 'semver';
-import { UpdateTypeInterface } from '../types/updateTypeInterface';
 import { TypeBase } from '../base';
+import { UpdateTypeInterface } from '../updateType';
 
 export class TypeSemver extends TypeBase implements UpdateTypeInterface {
   validate(test: string, errorMessage?: string): string {

@@ -10,10 +10,41 @@
  */
 
 import { TypeNumber } from './number/number';
-import { UpdateTypeInterface } from './types/updateTypeInterface';
 import { TypeAlphanum } from './alphanum/alphanum';
 import { TypeString } from './string/string';
 import { TypeSemver } from './semver/semver';
+
+export interface UpdateTypeInterface {
+  /**
+   * @description
+   * Validate that the string is valid for this type
+   *
+   * @usageNotes
+   *
+   * ```ts
+   * error = validate('1.1.1')
+   * if (error) {
+   *   ...
+   * }
+   * ```
+   *
+   * @param  str - the string to validate
+   * @return null if the string was ok, else a error message
+   */
+  validate(str: string, errorMessage?: string): string;
+
+  eq(str1: string, str2: string): boolean;
+
+  gt(str1: string, str2: string): boolean;
+
+  gte(str1: string, str2: string): boolean;
+
+  lt(str1: string, str2: string): boolean;
+
+  lte(str1: string, str2: string): boolean;
+
+  compare(a: string, b: string): number;
+}
 
 const typeAlphanum = new TypeAlphanum();
 const typeNumber = new TypeNumber();

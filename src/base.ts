@@ -1,4 +1,4 @@
-import { UpdateTypeInterface } from './types/updateTypeInterface';
+import { UpdateTypeInterface } from './updateType';
 
 export abstract class TypeBase implements UpdateTypeInterface {
   eq(str1: string, str2: string): boolean {
