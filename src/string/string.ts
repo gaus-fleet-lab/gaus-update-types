@@ -14,7 +14,7 @@ import { TypeBase } from '../base';
 
 export class TypeString extends TypeBase implements UpdateTypeInterface {
   validate(test: string, errorMessage?: string): string {
-    if (!test && test !== '') {
+    if (!test) {
       return errorMessage || `${test} is not a string`;
     }
     return null;
