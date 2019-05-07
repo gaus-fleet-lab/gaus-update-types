@@ -15,7 +15,7 @@ import { TypeBase } from '../base';
 export class TypeAlphanum extends TypeBase implements UpdateTypeInterface {
   validate(test: string, errorMessage?: string): string {
     const regexp = new RegExp('^[a-zA-Z0-9]*$');
-    if (!regexp.test(test)) {
+    if (!test || !regexp.test(test)) {
       return errorMessage || `${test} is not an alphanum`;
     }
     return null;
