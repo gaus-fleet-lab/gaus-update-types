@@ -1,1 +1,1 @@
-export { updateType, getSupportedUpdateTypes } from './updateType';
+export { UpdateType, UpdateTypeInterface, updateType, getSupportedUpdateTypes } from './updateType';
