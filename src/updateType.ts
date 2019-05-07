@@ -51,7 +51,7 @@ const typeNumber = new TypeNumber();
 const typeSemver = new TypeSemver();
 const typeString = new TypeString();
 
-type UpdateType = 'string' | 'number' | 'alphanum' | 'semver';
+export type UpdateType = 'string' | 'number' | 'alphanum' | 'semver';
 const UPDATE_TYPES: UpdateType[] = ['string', 'number', 'alphanum', 'semver'];
 
 const UPDATE_LUT: {
