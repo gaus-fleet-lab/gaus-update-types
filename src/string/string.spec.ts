@@ -64,9 +64,9 @@ describe('string', (): void => {
     expect(result).toBe(null);
   });
 
-  it('validates empty string', (): void => {
+  it('does not validate an empty string', (): void => {
     const result = sut.validate('');
-    expect(result).toBe(null);
+    expect(result).not.toBe(null);
   });
 
   it('can use sortFn function to sort list', (): void => {

@@ -34,6 +34,16 @@ describe('alphanum', (): void => {
     expect(result).toBe('error');
   });
 
+  it('does not validate undefined', (): void => {
+    const result = sut.validate(undefined);
+    expect(result).not.toBe(null);
+  });
+
+  it('does not validate empty string', (): void => {
+    const result = sut.validate('');
+    expect(result).not.toBe(null);
+  });
+
   it('validates valid number', (): void => {
     const result = sut.validate('1');
     expect(result).toBe(null);
