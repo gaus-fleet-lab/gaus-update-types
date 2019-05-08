@@ -2,7 +2,7 @@ import { TypeBase } from './base';
 
 describe('base class', (): void => {
   class SUT extends TypeBase {
-    validate(): string {
+    valid(): boolean {
       return null;
     }
     compare(): number {
