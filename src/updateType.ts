@@ -69,7 +69,7 @@ const UPDATE_LUT: {
  * @usageNotes
  *
  * ```ts
- * updateType('semver').validate('1.1.1')
+ * updateType('semver').valid('1.1.1')
  * ```
  *
  * @param  type - must be one of the supported types

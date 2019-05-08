@@ -13,13 +13,8 @@ const { updateType, getSupportedUpdateTypes } = require('@gaus/update-types');
 updateType('number').eq('1', '2');
 
 //Validate:
-let result: string = updateType('number').validate('1');
-console.log(result); //null
-result = updateType('number').validate('1.1.1');
-console.log(result); //1.1.1 is not a number
-
-//Validate with custom error message;
-let test = '1.1.1';
-result = updateType('number').validate(test, `${test} is not a valid version number`);
-console.log(result); //1.1.1 is not a valid versio number
+let result: string = updateType('number').valid('1');
+console.log(result); //true
+result = updateType('number').valid('1.1.1');
+console.log(result); //false
 ```
