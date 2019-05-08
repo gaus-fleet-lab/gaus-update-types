@@ -20,53 +20,48 @@ describe('string', (): void => {
   });
 
   it('does validate semver', (): void => {
-    const result = sut.validate('1.1.1');
-    expect(result).toBe(null);
+    const result = sut.valid('1.1.1');
+    expect(result).toBe(true);
   });
 
   it('does validate float', (): void => {
-    const result = sut.validate('1.1');
-    expect(result).toBe(null);
+    const result = sut.valid('1.1');
+    expect(result).toBe(true);
   });
 
   it('does not validate null', (): void => {
-    const result = sut.validate(null);
-    expect(result).not.toBe(null);
+    const result = sut.valid(null);
+    expect(result).not.toBe(true);
   });
 
   it('does not validate undefined', (): void => {
-    const result = sut.validate(undefined);
-    expect(result).not.toBe(null);
-  });
-
-  it('does not validate undefined with custom error', (): void => {
-    const result = sut.validate(undefined, 'error');
-    expect(result).toBe('error');
+    const result = sut.valid(undefined);
+    expect(result).not.toBe(true);
   });
 
   it('validates valid number', (): void => {
-    const result = sut.validate('1');
-    expect(result).toBe(null);
+    const result = sut.valid('1');
+    expect(result).toBe(true);
   });
 
   it('validates valid alphanum', (): void => {
-    const result = sut.validate('1abc');
-    expect(result).toBe(null);
+    const result = sut.valid('1abc');
+    expect(result).toBe(true);
   });
 
   it('validates valid alpha', (): void => {
-    const result = sut.validate('abc');
-    expect(result).toBe(null);
+    const result = sut.valid('abc');
+    expect(result).toBe(true);
   });
 
   it('validates weird chars', (): void => {
-    const result = sut.validate('.%$#&^');
-    expect(result).toBe(null);
+    const result = sut.valid('.%$#&^');
+    expect(result).toBe(true);
   });
 
   it('does not validate an empty string', (): void => {
-    const result = sut.validate('');
-    expect(result).not.toBe(null);
+    const result = sut.valid('');
+    expect(result).not.toBe(true);
   });
 
   it('can use sortFn function to sort list', (): void => {
