@@ -2,18 +2,18 @@ import { updateType } from './updateType';
 
 describe('update type tests', (): void => {
   it('can use alphanum', (): void => {
-    expect(updateType('alphanum').validate('abc0123')).toBe(null);
+    expect(updateType('alphanum').valid('abc0123')).toBe(true);
   });
 
   it('can use number', (): void => {
-    expect(updateType('number').validate('0')).toBe(null);
+    expect(updateType('number').valid('0')).toBe(true);
   });
 
   it('can use semver', (): void => {
-    expect(updateType('semver').validate('1.2.3')).toBe(null);
+    expect(updateType('semver').valid('1.2.3')).toBe(true);
   });
 
   it('can use string', (): void => {
-    expect(updateType('string').validate('abc0123.^%')).toBe(null);
+    expect(updateType('string').valid('abc0123.^%')).toBe(true);
   });
 });
