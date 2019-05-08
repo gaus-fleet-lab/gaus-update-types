@@ -22,16 +22,16 @@ export interface UpdateTypeInterface {
    * @usageNotes
    *
    * ```ts
-   * error = validate('1.1.1')
-   * if (error) {
+   * isValid = valid('1.1.1')
+   * if (isValid) {
    *   ...
    * }
    * ```
    *
    * @param  str - the string to validate
-   * @return null if the string was ok, else a error message
+   * @return true if the string was valid, else false
    */
-  validate(str: string, errorMessage?: string): string;
+  valid(str: string): boolean;
 
   eq(str1: string, str2: string): boolean;
 
