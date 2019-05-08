@@ -13,11 +13,8 @@ import { TypeBase } from '../base';
 import { UpdateTypeInterface } from '../updateType';
 
 export class TypeString extends TypeBase implements UpdateTypeInterface {
-  validate(test: string, errorMessage?: string): string {
-    if (!test) {
-      return errorMessage || `${test} is not a string`;
-    }
-    return null;
+  valid(test: string): boolean {
+    return !!test;
   }
   compare(a: string, b: string): number {
     return a.localeCompare(b);

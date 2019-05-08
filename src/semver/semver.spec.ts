@@ -20,38 +20,33 @@ describe('semver', (): void => {
   });
 
   it('validates valid semver', (): void => {
-    const result = sut.validate('1.1.1');
-    expect(result).toBe(null);
+    const result = sut.valid('1.1.1');
+    expect(result).toBe(true);
   });
 
   it('does not validate float', (): void => {
-    const result = sut.validate('1.1');
-    expect(result).not.toBe(null);
-  });
-
-  it('does not validate float with custom error', (): void => {
-    const result = sut.validate('1.1', 'error');
-    expect(result).toBe('error');
+    const result = sut.valid('1.1');
+    expect(result).not.toBe(true);
   });
 
   it('does not validate valid number', (): void => {
-    const result = sut.validate('1');
-    expect(result).not.toBe(null);
+    const result = sut.valid('1');
+    expect(result).not.toBe(true);
   });
 
   it('does not validate valid alphanum', (): void => {
-    const result = sut.validate('1abc');
-    expect(result).not.toBe(null);
+    const result = sut.valid('1abc');
+    expect(result).not.toBe(true);
   });
 
   it('does not validate valid alpha', (): void => {
-    const result = sut.validate('abc');
-    expect(result).not.toBe(null);
+    const result = sut.valid('abc');
+    expect(result).not.toBe(true);
   });
 
   it('does not validate invalid chars', (): void => {
-    const result = sut.validate('1abc.');
-    expect(result).not.toBe(null);
+    const result = sut.valid('1abc.');
+    expect(result).not.toBe(true);
   });
 
   it('can use sortFn function to sort list', (): void => {

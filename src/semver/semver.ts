@@ -14,12 +14,8 @@ import { TypeBase } from '../base';
 import { UpdateTypeInterface } from '../updateType';
 
 export class TypeSemver extends TypeBase implements UpdateTypeInterface {
-  validate(test: string, errorMessage?: string): string {
-    const validated = valid(test);
-    if (!validated) {
-      return errorMessage || `${test} is not an semver`;
-    }
-    return null;
+  valid(test: string): boolean {
+    return !!valid(test);
   }
   compare(a: string, b: string): number {
     return compare(a, b);

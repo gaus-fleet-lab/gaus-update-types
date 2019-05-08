@@ -13,12 +13,9 @@ import { TypeBase } from '../base';
 import { UpdateTypeInterface } from '../updateType';
 
 export class TypeNumber extends TypeBase implements UpdateTypeInterface {
-  validate(test: string, errorMessage?: string): string {
+  valid(test: string): boolean {
     const parsed = parseInt(test, 10);
-    if (Number.isNaN(parsed) || parsed.toString() !== test) {
-      return errorMessage || `${test} is not a number`;
-    }
-    return null;
+    return !(Number.isNaN(parsed) || parsed.toString() !== test);
   }
   compare(a: string, b: string): number {
     return Number(a) - Number(b);

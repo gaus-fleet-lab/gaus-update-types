@@ -13,12 +13,9 @@ import { TypeBase } from '../base';
 import { UpdateTypeInterface } from '../updateType';
 
 export class TypeAlphanum extends TypeBase implements UpdateTypeInterface {
-  validate(test: string, errorMessage?: string): string {
+  valid(test: string): boolean {
     const regexp = new RegExp('^[a-zA-Z0-9]*$');
-    if (!test || !regexp.test(test)) {
-      return errorMessage || `${test} is not an alphanum`;
-    }
-    return null;
+    return !!test && !!regexp.test(test);
   }
   compare(a: string, b: string): number {
     return a.localeCompare(b);

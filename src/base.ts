@@ -21,7 +21,7 @@ export abstract class TypeBase implements UpdateTypeInterface {
     return this.compare(str1, str2) <= 0;
   }
 
-  abstract validate(test: string): string;
+  abstract valid(test: string): boolean;
 
   abstract compare(a: string, b: string): number;
 }
