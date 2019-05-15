@@ -64,6 +64,11 @@ describe('string', (): void => {
     expect(result).not.toBe(true);
   });
 
+  it('does not validate a string containing spaces', (): void => {
+    const result = sut.valid('blah blah');
+    expect(result).not.toBe(true);
+  });
+
   it('can use sortFn function to sort list', (): void => {
     const list = ['a0.', 'a23#', 'b3$', 'c1#@', 'b5$#@', 'd4*('];
     list.sort(sut.compare);

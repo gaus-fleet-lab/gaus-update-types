@@ -14,7 +14,8 @@ import { UpdateTypeInterface } from '../updateType';
 
 export class TypeString extends TypeBase implements UpdateTypeInterface {
   valid(test: string): boolean {
-    return !!test;
+    const regexp = new RegExp('\\s');
+    return !!test && !regexp.test(test);
   }
   compare(a: string, b: string): number {
     return a.localeCompare(b);
