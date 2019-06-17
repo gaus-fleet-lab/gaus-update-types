@@ -91,7 +91,7 @@ describe('alphanum', (): void => {
       '15.0',
     ];
     list.sort(sut.compare);
-    expect(list).toBe([
+    expect(list).toEqual([
       '1.0',
       '1.2',
       '1.2-SNAPSHOT',
