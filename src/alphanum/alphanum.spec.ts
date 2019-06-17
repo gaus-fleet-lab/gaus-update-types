@@ -34,7 +34,7 @@ describe('alphanum', (): void => {
     expect(result).not.toBe(true);
   });
 
-  it('does not allow whitespaces', () => {
+  it('does not allow whitespaces', (): void => {
     const result = sut.valid('1 2 3 4');
     expect(result).not.toBe(true);
   });
@@ -75,7 +75,7 @@ describe('alphanum', (): void => {
     expect(list[5]).toBe('d4');
   });
 
-  it('sorts randomized version array in natural order', () => {
+  it('sorts randomized version array in natural order', (): void => {
     const list = [
       '1.0',
       '2.0',
