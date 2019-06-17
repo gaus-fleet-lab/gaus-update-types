@@ -14,10 +14,10 @@ import { UpdateTypeInterface } from '../updateType';
 
 export class TypeAlphanum extends TypeBase implements UpdateTypeInterface {
   valid(test: string): boolean {
-    const regexp = new RegExp('^[a-zA-Z0-9]*$');
-    return !!test && !!regexp.test(test);
+    const regexp = new RegExp('\\s');
+    return !!test && !regexp.test(test);
   }
   compare(a: string, b: string): number {
-    return a.localeCompare(b);
+    return a.localeCompare(b, 'en', { sensitivity: 'base', numeric: true, ignorePunctuation: true });
   }
 }
