@@ -15,9 +15,9 @@
     "dist/"
   ],
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "1.7.0",
-    "@typescript-eslint/parser": "1.7.0",
-    "eslint": "5.16.0",
+    "@typescript-eslint/eslint-plugin": "1.13.0",
+    "@typescript-eslint/parser": "1.13.0",
+    "eslint": "6.1.0",
     "eslint-config-prettier": "4.2.0",
     "eslint-plugin-import": "2.18.2",
     "eslint-plugin-jest": "22.5.1",
